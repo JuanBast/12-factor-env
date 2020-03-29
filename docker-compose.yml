@@ -2,10 +2,12 @@ version: "2"
 services:
     backend:
         build: ./backend/
+        command: /app/node_modules/.bin/nodemon index.js
         ports: 
             - 3000:3000
         environment: 
-            - NODE_ENV=develpment
+            - NODE_ENV=development
             - PORT=3000
+            - LOGGER_LEVEL=info
         volumes: 
             - ./backend:/app
